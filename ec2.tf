@@ -28,14 +28,3 @@ resource "aws_instance" "web2" {
     aws_key_pair.chave_key
   ]
 }
-#--------------------------OUTPUTS----------------------------#
-output "maquina_aws" {
-  value = [
-    for web in aws_instance.web2 :
-    <<EOF
-          Name: ${web.tags_all.Name}
-          ssh -i id_rsa ubuntu@${web.public_ip}
-          Public ip: ${web.public_ip}
-        EOF
-  ]
-}
