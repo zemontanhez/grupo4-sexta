@@ -78,21 +78,3 @@ resource "aws_route_table_association" "c" {
   route_table_id = aws_route_table.rt_terraform.id
 }
 #-------------------------------------------------------------------------------#
-output vpc_id {
-  value = aws_vpc.main.id
-}
-output int_gateway {
-  value = aws_internet_gateway.gw.id
-}
-output route_table {
-  value = aws_route_table.rt_terraform.id
-}
-output subnet_id_a {
-  value = aws_subnet.my_subnet_a.id
-}
-output subnet_id_b {
-  value = aws_subnet.my_subnet_b.id
-}
-output subnet_id_c {
-  value = aws_subnet.my_subnet_c.id
-}
